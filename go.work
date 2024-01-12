@@ -6,4 +6,5 @@ use (
   ./weather-forecast
   ./cars-assemble
   ./annalyns-infiltration
+  ./welcome-to-tech-palace
 )
