@@ -11,7 +11,6 @@ In the previous exercise, we saw that there are two ways to write comments in Go
 ## Documentation comments
 
 In Go, comments play an important role in documenting code. They are used by the `godoc` command, which extracts these comments to create documentation about Go packages. A documentation comment should be a complete sentence that starts with the name of the thing being described and ends with a period.
-
 Comments should precede packages as well as exported identifiers, for example exported functions, methods, package variables, constants, and structs, which you will learn more about in the next exercises.
 
 A package-level variable can look like this:

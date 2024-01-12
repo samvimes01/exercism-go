@@ -1,0 +1,8 @@
+go 1.21.5
+
+use (
+  ./hello-world
+  ./lasagna
+  ./weather-forecast
+  ./cars-assemble
+)
