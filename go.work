@@ -14,4 +14,5 @@ use (
   ./card-tricks
   ./animal-magic
   ./bird-watcher
+  ./interest-is-interesting
 )
