@@ -7,4 +7,5 @@ use (
   ./cars-assemble
   ./annalyns-infiltration
   ./welcome-to-tech-palace
+  ./party-robot
 )
