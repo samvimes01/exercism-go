@@ -13,4 +13,5 @@ use (
   ./need-for-speed
   ./card-tricks
   ./animal-magic
+  ./bird-watcher
 )
