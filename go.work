@@ -9,4 +9,6 @@ use (
   ./welcome-to-tech-palace
   ./party-robot
   ./vehicle-purchase
+  ./blackjack
+  ./need-for-speed
 )
