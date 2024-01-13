@@ -12,4 +12,5 @@ use (
   ./blackjack
   ./need-for-speed
   ./card-tricks
+  ./animal-magic
 )
