@@ -11,4 +11,5 @@ use (
   ./vehicle-purchase
   ./blackjack
   ./need-for-speed
+  ./card-tricks
 )
