@@ -8,4 +8,5 @@ use (
   ./annalyns-infiltration
   ./welcome-to-tech-palace
   ./party-robot
+  ./vehicle-purchase
 )
