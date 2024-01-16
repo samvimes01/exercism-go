@@ -24,4 +24,5 @@ use (
   ./logs-logs-logs
   ./elons-toys
   ./census
+  ./parsing-log-files
 )
