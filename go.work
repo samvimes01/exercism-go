@@ -23,4 +23,5 @@ use (
   ./chessboard
   ./logs-logs-logs
   ./elons-toys
+  ./census
 )
