@@ -21,4 +21,5 @@ use (
   ./gross-store
   ./election-day
   ./chessboard
+  ./logs-logs-logs
 )
