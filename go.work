@@ -22,4 +22,5 @@ use (
   ./election-day
   ./chessboard
   ./logs-logs-logs
+  ./elons-toys
 )
