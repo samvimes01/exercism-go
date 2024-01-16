@@ -27,4 +27,5 @@ use (
   ./parsing-log-files
   ./airport-robot
   ./meteorology
+  ./sorting-room
 )
