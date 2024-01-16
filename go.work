@@ -18,4 +18,5 @@ use (
   ./lasagna-master
   ./leap
   ./booking-up-for-beauty
+  ./gross-store
 )
