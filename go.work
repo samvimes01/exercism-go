@@ -16,4 +16,5 @@ use (
   ./bird-watcher
   ./interest-is-interesting
   ./lasagna-master
+  ./leap
 )
