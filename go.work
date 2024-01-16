@@ -20,4 +20,5 @@ use (
   ./booking-up-for-beauty
   ./gross-store
   ./election-day
+  ./chessboard
 )
