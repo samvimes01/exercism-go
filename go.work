@@ -28,4 +28,5 @@ use (
   ./airport-robot
   ./meteorology
   ./sorting-room
+  ./the-farm
 )
