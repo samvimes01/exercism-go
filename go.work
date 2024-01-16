@@ -25,4 +25,5 @@ use (
   ./elons-toys
   ./census
   ./parsing-log-files
+  ./airport-robot
 )
