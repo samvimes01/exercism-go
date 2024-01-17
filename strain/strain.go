@@ -6,7 +6,7 @@ package strain
 // They are not part of the Exercism syllabus yet but you can learn about
 // them here: https://go.dev/tour/generics/1
 func Keep[T any](list []T, filter func(T) bool)[]T {
-  if list == nil || len(list) == 0 {
+  if len(list) == 0 {
     return list
   }
   filtered := make([]T, 0, len(list))
