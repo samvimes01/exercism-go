@@ -31,4 +31,5 @@ use (
   ./the-farm
   ./expenses
   ./two-fer
+  ./raindrops
 )
