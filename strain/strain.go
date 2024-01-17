@@ -5,22 +5,19 @@ package strain
 // You will need typed parameters (aka "Generics") to solve this exercise.
 // They are not part of the Exercism syllabus yet but you can learn about
 // them here: https://go.dev/tour/generics/1
-func Keep[T any](list []T, f func(T) bool)[]T {
-  filtered := make([]T, 0)
+func Keep[T any](list []T, filter func(T) bool)[]T {
+  if list == nil || len(list) == 0 {
+    return list
+  }
+  filtered := make([]T, 0, len(list))
   for i, v := range list {
-    if f(v) {
+    if filter(v) {
       filtered = append(filtered, list[i])
     }
   }
   return filtered
 }
 
-func Discard[T any](list []T, f func(T) bool)[]T {
-  filtered := make([]T, 0)
-  for i, v := range list {
-    if !f(v) {
-      filtered = append(filtered, list[i])
-    }
-  }
-  return filtered
+func Discard[T any](list []T, filter func(T) bool)[]T {
+  return Keep(list, func (el T) bool { return !filter(el) })
 }
