@@ -32,4 +32,5 @@ use (
   ./expenses
   ./two-fer
   ./raindrops
+  ./collatz-conjecture
 )
