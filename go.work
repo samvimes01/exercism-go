@@ -33,4 +33,5 @@ use (
   ./two-fer
   ./raindrops
   ./collatz-conjecture
+  ./strain
 )
