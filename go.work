@@ -30,4 +30,5 @@ use (
   ./sorting-room
   ./the-farm
   ./expenses
+  ./two-fer
 )
