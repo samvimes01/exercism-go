@@ -35,4 +35,5 @@ use (
   ./collatz-conjecture
   ./strain
   ./gigasecond
+  ./hamming
 )
