@@ -37,4 +37,5 @@ use (
   ./gigasecond
   ./hamming
   ./scrabble-score
+  ./custom-set
 )
