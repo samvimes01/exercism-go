@@ -36,4 +36,5 @@ use (
   ./strain
   ./gigasecond
   ./hamming
+  ./scrabble-score
 )
