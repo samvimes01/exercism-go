@@ -42,4 +42,5 @@ use (
   ./difference-of-squares
   ./luhn
   ./resistor-color
+  ./meetup
 )
