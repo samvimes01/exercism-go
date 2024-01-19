@@ -41,4 +41,5 @@ use (
   ./isogram
   ./difference-of-squares
   ./luhn
+  ./resistor-color
 )
