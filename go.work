@@ -38,4 +38,5 @@ use (
   ./hamming
   ./scrabble-score
   ./custom-set
+  ./isogram
 )
