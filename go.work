@@ -40,4 +40,5 @@ use (
   ./custom-set
   ./isogram
   ./difference-of-squares
+  ./luhn
 )
