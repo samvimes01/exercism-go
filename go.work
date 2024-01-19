@@ -39,4 +39,5 @@ use (
   ./scrabble-score
   ./custom-set
   ./isogram
+  ./difference-of-squares
 )
