@@ -45,4 +45,5 @@ use (
   ./meetup
   ./space-age
   ./nucleotide-count
+  ./rna-transcription
 )
