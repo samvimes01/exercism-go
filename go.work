@@ -49,4 +49,5 @@ use (
   ./pangram
   ./flatten-array
   ./reverse-string
+  ./resistor-color-trio
 )
