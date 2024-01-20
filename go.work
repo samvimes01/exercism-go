@@ -43,4 +43,5 @@ use (
   ./luhn
   ./resistor-color
   ./meetup
+  ./space-age
 )
