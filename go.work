@@ -47,4 +47,5 @@ use (
   ./nucleotide-count
   ./rna-transcription
   ./pangram
+  ./flatten-array
 )
