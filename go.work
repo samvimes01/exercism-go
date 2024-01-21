@@ -54,4 +54,5 @@ use (
   ./etl
   ./bob
   ./grains
+  ./resistor-color-duo
 )
