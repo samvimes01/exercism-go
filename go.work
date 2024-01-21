@@ -55,4 +55,5 @@ use (
   ./bob
   ./grains
   ./resistor-color-duo
+  ./isbn-verifier
 )
