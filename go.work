@@ -50,4 +50,5 @@ use (
   ./flatten-array
   ./reverse-string
   ./resistor-color-trio
+  ./darts
 )
