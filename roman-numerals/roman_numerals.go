@@ -5,7 +5,31 @@ import (
 	"strings"
 )
 
-func ToRomanNumeral(input int) (string, error) {
+var decRomMap = []struct {
+	decimal int
+	roman   string
+}{
+	{1, "I"}, {4, "IV"}, {5, "V"}, {9, "IX"},
+	{10, "X"}, {40, "XL"}, {50, "L"}, {90, "XC"},
+	{100, "C"}, {400, "CD"}, {500, "D"}, {900, "CM"},
+	{1000, "M"},
+}
+
+func ToRomanNumeral(dec int) (string, error) {
+	if dec < 1 || dec > 3999 {
+		return "", errors.New("number must be in range 1-3999")
+	}
+	roman := ""
+	repeatRoman := 0
+	for i := len(decRomMap) - 1; i >= 0; i-- {
+		decimal := decRomMap[i].decimal
+		repeatRoman, dec = dec/decimal, dec%decimal
+		roman += strings.Repeat(decRomMap[i].roman, repeatRoman)
+	}
+	return roman, nil
+}
+
+func ToRomanNumeral2(input int) (string, error) {
 	if input < 1 || input > 3999 {
 		return "", errors.New("input out of range")
 	}
