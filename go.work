@@ -56,4 +56,5 @@ use (
   ./grains
   ./resistor-color-duo
   ./isbn-verifier
+  ./roman-numerals
 )
