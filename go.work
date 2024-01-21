@@ -52,4 +52,5 @@ use (
   ./resistor-color-trio
   ./darts
   ./etl
+  ./bob
 )
