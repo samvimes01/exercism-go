@@ -51,4 +51,5 @@ use (
   ./reverse-string
   ./resistor-color-trio
   ./darts
+  ./etl
 )
