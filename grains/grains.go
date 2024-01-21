@@ -12,6 +12,7 @@ func Square(number int) (uint64, error) {
 	if number == 1 {
 		return 1, nil
 	}
+	// return 1 << (num - 1), nil
 	return uint64(math.Pow(2, float64(number - 1))), nil
 }
 
