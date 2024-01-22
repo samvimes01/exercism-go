@@ -62,4 +62,5 @@ use (
   ./clock
   ./protein-translation
   ./word-count
+  ./linked-list
 )
