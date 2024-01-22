@@ -58,4 +58,5 @@ use (
   ./isbn-verifier
   ./roman-numerals
   ./matrix
+  ./rotational-cipher
 )
