@@ -61,4 +61,5 @@ use (
   ./rotational-cipher
   ./clock
   ./protein-translation
+  ./word-count
 )
