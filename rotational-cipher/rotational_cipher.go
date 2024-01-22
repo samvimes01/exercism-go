@@ -3,17 +3,14 @@ package rotationalcipher
 import "strings"
 
 func RotationalCipher(plain string, shiftKey int) string {
-	alphabet := "abcdefghijklmnopqrstuvwxyz"
-	rotated := alphabet[shiftKey:] + alphabet[:shiftKey]
-	mapped := make(map[string]string, 52)
-	for i, letter := range alphabet {
-		mapped[string(letter)] = string(rotated[i])
-		mapped[strings.ToUpper(string(letter))] = string(strings.ToUpper(string(rotated[i])))
-	}
 	cipher := strings.Builder{}
 	for _, letter := range plain {
-		if ch, ok := mapped[string(letter)]; ok {
-			cipher.WriteString(ch)
+		if letter >= 'a' && letter <= 'z' || letter >= 'A' && letter <= 'Z' {
+			shift := letter + rune(shiftKey)
+			if shift > 'z' && letter <= 'z' || shift > 'Z' && letter <= 'Z' {
+				shift -= 26
+			}
+			cipher.WriteRune(shift)
 		} else {
 			cipher.WriteRune(letter)
 		}
