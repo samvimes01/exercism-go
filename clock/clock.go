@@ -47,3 +47,38 @@ func (c Clock) Subtract(m int) Clock {
 func (c Clock) String() string {
 	return fmt.Sprintf("%02d:%02d", c.h, c.m)
 }
+
+/*
+just minutes 
+type Clock int
+
+const (
+	dayMinutes  = 1440
+	hourMinutes = 60
+)
+
+func normalize(minutes int) Clock {
+	if minutes < 0 {
+		return Clock(dayMinutes + (minutes % dayMinutes))
+	} else if minutes >= dayMinutes {
+		return Clock(minutes % dayMinutes)
+	}
+	return Clock(minutes)
+}
+
+func New(hour, minutes int) Clock {
+	return normalize(hour*hourMinutes + minutes)
+}
+
+func (c Clock) Add(minutes int) Clock {
+	return normalize(int(c) + minutes)
+}
+
+func (c Clock) Subtract(minutes int) Clock {
+	return normalize(int(c) - minutes)
+}
+
+func (c Clock) String() string {
+	return fmt.Sprintf("%02d:%02d", c/hourMinutes, c%hourMinutes)
+}
+*/
