@@ -60,4 +60,5 @@ use (
   ./matrix
   ./rotational-cipher
   ./clock
+  ./protein-translation
 )
