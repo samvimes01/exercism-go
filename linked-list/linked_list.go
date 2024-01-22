@@ -17,17 +17,10 @@ type Node struct {
 var ErrEmptyList = errors.New("empty list")
 
 func NewList(elements ...interface{}) *List {
-	if len(elements) == 0 {
-		return &List{}
+	list := &List{}
+	for _, v := range elements {
+		list.Push(v)
 	}
-	prev := &Node{Value: elements[0], prev: nil}
-	list := &List{head: prev}
-	for i := 1; i < len(elements); i++ {
-		node := &Node{Value: elements[i], prev: prev}
-		prev.next = node
-		prev = node
-	}
-	list.tail = prev
 	return list
 }
 
