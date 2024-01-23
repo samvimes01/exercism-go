@@ -66,4 +66,5 @@ use (
   ./triangle
   ./proverb
   ./anagram
+  ./phone-number
 )
