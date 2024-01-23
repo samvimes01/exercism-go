@@ -67,4 +67,5 @@ use (
   ./proverb
   ./anagram
   ./phone-number
+  ./largest-series-product
 )
