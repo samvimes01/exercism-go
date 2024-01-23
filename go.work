@@ -65,4 +65,5 @@ use (
   ./linked-list
   ./triangle
   ./proverb
+  ./anagram
 )
