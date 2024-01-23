@@ -63,4 +63,5 @@ use (
   ./protein-translation
   ./word-count
   ./linked-list
+  ./triangle
 )
