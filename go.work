@@ -69,4 +69,5 @@ use (
   ./phone-number
   ./largest-series-product
   ./series
+  ./acronym
 )
