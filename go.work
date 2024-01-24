@@ -71,4 +71,5 @@ use (
   ./series
   ./acronym
   ./list-ops
+  ./twelve-days
 )
