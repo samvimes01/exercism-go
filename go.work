@@ -72,4 +72,5 @@ use (
   ./acronym
   ./list-ops
   ./twelve-days
+  ./sum-of-multiples
 )
