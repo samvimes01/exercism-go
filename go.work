@@ -70,4 +70,5 @@ use (
   ./largest-series-product
   ./series
   ./acronym
+  ./list-ops
 )
