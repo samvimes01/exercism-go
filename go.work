@@ -76,4 +76,5 @@ use (
   ./bottle-song
   ./sublist
   ./all-your-base
+  ./transpose
 )
