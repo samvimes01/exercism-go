@@ -1,17 +1,24 @@
 package transpose
 
 func Transpose(input []string) []string {
-	result := []string{}
-	for r, row := range input {
-		for c, char := range row {
-			for len(result) <= c {
-				result = append(result, "")
+	maxLength := func(input []string) (max int) {
+		for _, line := range input {
+			if len(line) > max {
+				max = len(line)
 			}
-			for len(result[c]) < r {
-				result[c] += " "
-			}
-			result[c] += string(char)
+		}
+		return
+	}
+	max := maxLength(input)
+	var output = make([]string, max)
+	for i, row := range input {
+		for j, char := range row {
+			output[j] += string(char)
+		}
+		remainToMax := maxLength(input[i:])
+		for j := len(row); j < remainToMax; j++ {
+			output[j] += " "
 		}
 	}
-	return result
+	return output
 }
