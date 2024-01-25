@@ -75,4 +75,5 @@ use (
   ./sum-of-multiples
   ./bottle-song
   ./sublist
+  ./all-your-base
 )
