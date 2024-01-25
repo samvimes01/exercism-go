@@ -1,44 +1,28 @@
 package allyourbase
 
-import (
-	"errors"
-	"math"
-)
+import "errors"
 
-func ConvertToBase(inputBase int, inputDigits []int, outputBase int) ([]int, error) {
-	if inputBase < 2 {
-		return nil, errors.New("input base must be >= 2")
+func ConvertToBase(base int, digits []int, outputBase int) (conversion []int, err error) {
+	if base < 2 {
+		return []int{0}, errors.New("input base must be >= 2")
 	}
 	if outputBase < 2 {
-		return nil, errors.New("output base must be >= 2")
+		return []int{0}, errors.New("output base must be >= 2")
 	}
-	if len(inputDigits) == 0 || len(inputDigits) == 1 && inputDigits[0] == 0 {
-		return []int{0}, nil
-	}
-	// convert input base to base 10
-	digits10 := 0
-	for i, v := range inputDigits {
-		if v < 0 || v >= inputBase {
+	var sum int
+	for _, d := range digits {
+		if d >= base || d < 0 {
 			return nil, errors.New("all digits must satisfy 0 <= d < input base")
 		}
-		pos := len(inputDigits) - i - 1
-		digits10 += v * int(math.Pow(float64(inputBase), float64(pos)))
+		sum = sum*base + d
 	}
-	if digits10 == 0 {
+	if sum == 0 {
 		return []int{0}, nil
 	}
-	// convert to output base
-	outputDigits := make([]int, 0)
-	for digits10 > 0 {
-		digitBase := digits10 % outputBase
-		digits10 /= outputBase
-		outputDigits = append(outputDigits, digitBase)
+	for ; sum > 0; sum /= outputBase {
+		conversion = append([]int{sum % outputBase}, conversion...)
 	}
-	// reverse
-	for i, j := 0, len(outputDigits)-1; i < j; i, j = i+1, j-1 {
-		outputDigits[i], outputDigits[j] = outputDigits[j], outputDigits[i] 
-	}
-	return outputDigits, nil
+	return conversion, nil
 }
 /*
 https://www.tutorialspoint.com/computer_logical_organization/number_system_conversion.htm
