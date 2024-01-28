@@ -78,4 +78,5 @@ use (
   ./all-your-base
   ./transpose
   ./sieve
+  ./tournament
 )
