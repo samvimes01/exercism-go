@@ -80,4 +80,5 @@ use (
   ./sieve
   ./tournament
   ./dnd-character
+  ./parallel-letter-frequency
 )
