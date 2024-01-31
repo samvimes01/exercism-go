@@ -81,4 +81,5 @@ use (
   ./tournament
   ./dnd-character
   ./parallel-letter-frequency
+  ./nth-prime
 )
