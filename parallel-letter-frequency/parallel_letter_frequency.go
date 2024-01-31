@@ -12,46 +12,21 @@ func Frequency(text string) FreqMap {
 	}
 	return frequencies
 }
-/*
-goos: darwin  goarch: amd64  pkg: letter
-cpu: Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz
-BenchmarkSequentialFrequency
-BenchmarkSequentialFrequency-16   3360    339826 ns/op  17457 B/op  11 allocs/op
-BenchmarkConcurrentFrequency
-BenchmarkConcurrentFrequency-16    246   4808376 ns/op   4674 B/op  21 allocs/op
-PASS
-ok      letter  3.464s
-*/
-
 
 // ConcurrentFrequency counts the frequency of each rune in the given strings,
 // by making use of concurrency.
-func ConcurrentFrequency(texts []string) FreqMap {
-	frequencies := FreqMap{}
-	done := make(chan struct{}, len(texts))
-	countFreq := func(ch <-chan rune) {
-		for r := range ch {
-			frequencies[r]++
+func ConcurrentFrequency(strings []string) FreqMap {
+	m := FreqMap{}
+	results := make(chan FreqMap)
+	for _, s := range strings {
+		go func(s string) {
+			results <- Frequency(s)
+		}(s)
+	}
+	for range strings {
+		for k, v := range <-results {
+			m[k] += v
 		}
-		done <- struct{}{}
 	}
-
-	for _, text := range texts {
-		countFreq(parseRunes(text))
-	}
-	for range texts {
-		<-done
-	}
-	return frequencies
-}
-
-func parseRunes(text string) <-chan rune {
-	ch := make(chan rune)
-	go func() {
-		for _, r := range text {
-			ch <- r
-		}
-		close(ch)
-	}()
-	return ch
+	return m
 }
