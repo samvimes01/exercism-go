@@ -83,4 +83,5 @@ use (
   ./parallel-letter-frequency
   ./nth-prime
   ./prime-factors
+  ./armstrong-numbers
 )
