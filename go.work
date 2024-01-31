@@ -82,4 +82,5 @@ use (
   ./dnd-character
   ./parallel-letter-frequency
   ./nth-prime
+  ./prime-factors
 )
