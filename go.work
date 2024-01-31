@@ -79,4 +79,5 @@ use (
   ./transpose
   ./sieve
   ./tournament
+  ./dnd-character
 )
