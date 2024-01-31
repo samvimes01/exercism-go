@@ -12,20 +12,34 @@ func Frequency(text string) FreqMap {
 	}
 	return frequencies
 }
+/*
+goos: darwin  goarch: amd64  pkg: letter
+cpu: Intel(R) Core(TM) i9-9980HK CPU @ 2.40GHz
+BenchmarkSequentialFrequency
+BenchmarkSequentialFrequency-16   3360    339826 ns/op  17457 B/op  11 allocs/op
+BenchmarkConcurrentFrequency
+BenchmarkConcurrentFrequency-16    246   4808376 ns/op   4674 B/op  21 allocs/op
+PASS
+ok      letter  3.464s
+*/
+
 
 // ConcurrentFrequency counts the frequency of each rune in the given strings,
 // by making use of concurrency.
 func ConcurrentFrequency(texts []string) FreqMap {
 	frequencies := FreqMap{}
 	done := make(chan struct{}, len(texts))
-	for _, text := range texts {
-		ch := parseRunes(text)
+	countFreq := func(ch <-chan rune) {
 		for r := range ch {
 			frequencies[r]++
 		}
 		done <- struct{}{}
 	}
-	for i:=0; i<len(texts); i++ {
+
+	for _, text := range texts {
+		countFreq(parseRunes(text))
+	}
+	for range texts {
 		<-done
 	}
 	return frequencies
