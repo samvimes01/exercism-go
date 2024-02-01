@@ -87,4 +87,5 @@ use (
   ./atbash-cipher
   ./simple-cipher
   ./complex-numbers
+  ./bank-account
 )
