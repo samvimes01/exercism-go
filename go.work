@@ -85,4 +85,5 @@ use (
   ./prime-factors
   ./armstrong-numbers
   ./atbash-cipher
+  ./simple-cipher
 )
