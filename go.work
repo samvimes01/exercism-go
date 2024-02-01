@@ -86,4 +86,5 @@ use (
   ./armstrong-numbers
   ./atbash-cipher
   ./simple-cipher
+  ./complex-numbers
 )
