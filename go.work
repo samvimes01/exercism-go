@@ -88,4 +88,5 @@ use (
   ./simple-cipher
   ./complex-numbers
   ./bank-account
+  ./perfect-numbers
 )
