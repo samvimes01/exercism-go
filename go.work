@@ -91,4 +91,5 @@ use (
   ./perfect-numbers
   ./robot-name
   ./wordy
+  ./yacht
 )
