@@ -1,49 +1,38 @@
 package allergies
 
-var items = []struct {
-	item  string
-	value uint
-}{
-	{"eggs", 1}, {"peanuts", 2}, {"shellfish", 4}, {"strawberries", 8}, {"tomatoes", 16}, {"chocolate", 32}, {"pollen", 64}, {"cats", 128},
+var allergies = map[uint]string{
+	1:   "eggs",
+	2:   "peanuts",
+	4:   "shellfish",
+	8:   "strawberries",
+	16:  "tomatoes",
+	32:  "chocolate",
+	64:  "pollen",
+	128: "cats",
 }
 
-func Allergies(allergies uint) []string {
-	if allergies > 1024 {
-		for allergies > 1024 {
-			allergies -= 1024
+var keys = [8]uint{1, 2, 4, 8, 16, 32, 64, 128}
+
+// Allergies ...
+func Allergies(score uint) []string {
+	result := make([]string, 0)
+
+	for _, key := range keys {
+		if key&score > 0 {
+			result = append(result, allergies[key])
 		}
 	}
-	if allergies > 512 {
-		allergies -= 512
-	}
-	if allergies > 256 {
-		allergies -= 256
-	}
-	r := []string{}
-	for i := len(items) - 1; i >= 0; i-- {
-		if items[i].value <= allergies {
-			r = append([]string{items[i].item}, r...)
-			allergies -= items[i].value
-			if items[i].value <= allergies {
-				for items[i].value < allergies {
-					allergies -= items[i].value
-				}
-			}
-		}
-		if allergies <= 0 {
-			break
-		}
-	}
-	return r
+
+	return result
 }
 
-func AllergicTo(allergies uint, allergen string) bool {
-	//panic("Please implement the AllergicTo function")
-	als := Allergies(allergies)
-	for _, v := range als {
-		if allergen == v {
+// AllergicTo ...
+func AllergicTo(score uint, substance string) bool {
+	for _, key := range keys {
+		if key&score > 0 && allergies[key] == substance {
 			return true
 		}
 	}
+
 	return false
 }
